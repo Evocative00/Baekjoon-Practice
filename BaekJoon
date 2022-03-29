@@ -1,0 +1,613 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+// 헤더파일 종류
+/*#include <stdio.h>  : fclose, fopen, gets, fread, scanf, printf, fprintf, fscanf와 같이 스트림 입출력에 대한 함수선언 및 매크로와  FILE과 같은 자료형과, EOF, NULL, BUFSIZ와 같은 상수를 정의하고 있다. 
+
+#include <stdlib.h> : abs, atoi, itoa, rand, toupper, getenv와 같은 함수선언을 포함하고, errno와 같은 전역변수 선언하고 있다. calloc, malloc, realloc과 같이 동적으로 메모리를 할당하는 함수를 선언하고 있다. 
+
+#include <string.h> : strcat, strcpy, strcmp, strncmp와 같이 문자열 처리함수를 포함하고 있다. 
+
+#include <math.h> : sqrt, sin, log10, pow, matherr와 같은 모든 수학루틴에 대한 함수를 선언하고 있다. 
+
+#include <ctype.h> : 문자부류에 사용된 전역변수를 선언하고, 이에 대한 상수와 매크로를 정의한다. 예를 들면 islower(), toascii(), _tolower()와 같은 매크로와 _upper, _lower와 같은 상수를 정의하고, _ctype과 같은 전역변수를 선언한다.*/
+
+int main_saaaaaaaa(void)
+{/*
+
+	int a, b;
+
+	printf("a와 b는? (a , b)\n");
+	scanf_s("%d, %d", &a, &b);
+	printf("\nA + B = %d", a + b);  // 1000번
+
+
+	printf(" \    /\ ");
+	printf("\n  )  ( ') ");
+	printf("\n (  /  ) ");
+	printf("\n  \(__)| ");   // 10171번
+
+
+	printf("|\\_/|\n");
+	printf("|q p|   /}\n");
+	printf("( 0 )\"\"\"\\\n");
+	printf("|\"^\"`    |\n");
+	printf("||_/=\\\\__|\n");       // 10172번
+
+
+	int a, b;
+	scanf_s("%d %d", &a, &b);
+	printf("%d\n", a - b);   // 1001번
+
+
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d\n", a * b);    // 10998번
+
+
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%.9f", (double)a / b);  // 1008번
+
+
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d", a + b);
+	printf("%d", a - b);
+	printf("%d", a * b);
+	printf("%d", a / b);
+	printf("%d", a % b);       //10869번
+
+
+	char str[256];
+	scanf("%s", str, sizeof(str));
+	printf("%s??!\n", str);       //10926번
+
+
+	// 불기년도 = 서기년도 + 544
+	int a;
+	scanf_s("%d", &a);
+	printf("%d\n", a-543);            //18108번
+
+
+	int a, b, c;
+	scanf_s("%d %d %d", &a, &b, &c);
+
+	printf("%d\n", (a + b) % c);
+	printf("%d\n", (((a % c) + (b % c)) % c));
+	printf("%d\n", (a * b) % c);
+	printf("%d\n", ((a % c) * (b % c)%c));      //10430번
+
+
+	int a, b;
+	scanf("%d %d", &a, &b);
+	int result1, result2, result3;
+	printf("  %d\n", a * (b % 10));
+	printf(" %d\n", a * (b % 100 / 10));
+	printf("%d\n", a * (b / 100));
+	printf("%d", a * b);         //2588번
+
+
+//if문
+	int A = 0, B = 0;
+	scanf("%d %d", &A, &B);
+	if (A > B)
+		printf(">");
+	else if (A < B)
+		printf("<");
+	else
+		printf("==");    //1330번
+
+
+	int score = 0;
+	scanf("%d", &score);
+	if (score >= 90)
+		printf("A");
+	else if (score >= 80)
+		printf("B");
+	else if (score >= 70)
+		printf("C");
+	else if (score >= 60)
+		printf("D");
+	else
+		printf("F");      //9498번
+
+
+	int year = 0;
+
+	scanf("%d", &year);
+
+	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+		printf("1");
+	else
+		printf("0");          //2753번
+
+
+	int x = 0, y = 0;
+	scanf("%d %d", &x, &y);
+	if ((x > 0) && y > 0)
+		printf("1");
+	else if ((x < 0) && y > 0)
+		printf("2");
+	else if ((x < 0) && y < 0)
+		printf("3");
+	else
+		printf("4");         //14681번
+
+
+	int h = 0, m = 0, a = 0, b = 0, c = 0;
+
+	scanf("%d %d", &h, &m);
+	a = h - 1;
+	b = m + 15;
+	c = m - 45;
+
+	if(m < 45)
+		if(h != 0)
+			printf("%d %d", a, b);
+		else
+			printf("23 %d", b);
+
+	if (m >= 45)
+		printf("%d %d", h, c);                  //2884번
+
+
+	int h, m, t;
+	scanf("%d %d %d", &h, &m, &t);
+
+	h += t / 60;
+	m += t % 60;
+
+	if (m >= 60)
+	{
+		h += 1;
+		m -= 60;
+	}
+
+	if (h >= 24)
+	{
+		h -= 24;
+	}
+	printf("%d %d", h, m);            //2525번
+
+
+	int a = 0, b = 0, c = 0;
+	scanf("%d %d %d", &a, &b, &c);
+
+	if ((a == b) && b == c)
+	{
+		printf("%d", 10000 + (a * 1000));
+	}
+
+	else if ((a == b) || (a == c) || (b == c))
+	{
+		if ((a == b) || a == c)
+			printf("%d", 1000 + a * 100);
+		else
+			printf("%d", 1000 + b * 100);
+	}
+
+	else if ((a != b) && a != c)
+	{
+		if (((a > b) && (b > c)) || ((a > c) && (c > b)))
+			printf("%d", a * 100);
+		else if (((b > a) && (a > c)) || ((b > c) && (c > a)))
+			printf("%d", b * 100);
+		else
+			printf("%d", c * 100);
+	}                                             //2480번
+
+
+int result;
+int max;
+int same;
+int cnt = 0;
+int dice[3];
+
+scanf("%d %d %d", &dice[0], &dice[1], &dice[2]);
+
+if (dice[0] == dice[1]) {
+	cnt++;
+	same = dice[0];
+}
+if (dice[0] == dice[2]) {
+	cnt++;
+	same = dice[0];
+}
+if (dice[1] == dice[2]) {
+	cnt++;
+	same = dice[1];
+}
+
+if (cnt == 0) {
+	max = dice[0];
+	max = max > dice[1] ? max : dice[1];
+	max = max > dice[2] ? max : dice[2];
+}
+
+switch (cnt) {
+case 0:
+	result = max * 100;
+	break;
+case 1:
+	result = 1000 + (same * 100);
+	break;
+case 3:
+	result = 10000 + (same * 1000);
+	break;
+default:
+	printf("error\n");
+}
+printf("%d", result);                             // 2480번 규원이의 방법
+
+
+
+//반복문 
+	int n = 0, i = 0;
+	scanf("%d", &n);
+	for (i = 1; i < 10; i++)
+		printf("%d * %d = %d\n", n, i, n * i);        //2739번
+
+
+	int i = 0, a = 0, b = 0, tn = 0;
+		scanf("%d", &tn);
+	for(i = 0; i < tn; ++i) //증감식 부호 주의
+	{
+		scanf("%d %d", &a, &b);
+		printf("%d\n", a + b);                      //10950번
+	}
+
+
+	int a = 0, sum = 0, n = 0;
+
+	scanf("%d", &n);
+	for (a = 1; a < n + 1; a++)
+	{
+		sum += a;
+	}
+	printf("%d", sum);                      //8393번
+
+
+	int a = 0, b = 0, t = 0, s = 0;
+	scanf("%d", &t);
+	for (s = 1; s <= t; s++)
+	{
+		scanf("%d %d", &a, &b);
+		printf("%d", a + b);
+	}                                      //15552번
+
+
+	int n = 0, a = 0;
+	scanf("%d", &n);
+	for (a = 1; a <= n; a++)
+	{
+		printf("%d\n", a);
+	}                                    //2741번
+
+
+	int n = 0, a = 0;
+	scanf("%d", &n);
+	for (a = 1; a = n; n--)
+	{
+		printf("%d\n", n);
+	}                                   //2742번
+
+
+	int a = 0, b = 0,i = 0, t = 0, cnt = 0;
+
+	scanf("%d", &t);
+	for (i = 1; i <= t; i++)
+	{
+		scanf("%d %d", &a, &b);
+		cnt++;
+		printf("Case #%d: %d\n", cnt, a + b);
+	}                                                 //11021번
+
+
+	int a = 0, b = 0, i = 0, t = 0, cnt = 0;
+
+	scanf("%d", &t);
+	for (i = 1; i <= t; i++)
+	{
+		scanf("%d %d", &a, &b);
+		cnt++;
+		printf("Case #%d: %d + %d = %d\n", cnt, a, b, a + b);
+	}                                                              //11022번
+
+	int n = 0;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++)         //바깥쪽 for는 몇 번째 줄인지 안쪽은 해당 줄에 몇 개의 문자를 출력할지 정함
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}                                    //2438번
+
+
+	int n = 0;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; ++i)
+	{
+		for (int j = 1; j <= n - i; ++j)
+		{
+			printf(" ");
+		}
+		for (int j = 1; j <= i; ++j)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}                                   //2439번
+
+
+	int n, x;
+	scanf("%d %d", &n, &x);
+
+	int a;
+	for (int i = 0; i < n; ++i)
+	{
+		scanf("%d", &a);
+		if (a < x) printf("%d ", a);
+	}                                      //10871번
+
+
+	int a = 1, b = 1;
+	while (1)
+	{
+		scanf("%d %d", &a, &b);
+
+		if (a == 0 && b == 0)
+			break;
+
+		printf("%d\n", a + b);
+	}                                 //10952번
+
+
+	int A, B;
+	while (scanf("%d %d", &A, &B) != EOF)      //End of file
+		printf("%d\n", A + B);               //10951번           
+
+
+	int a = 0, b = 0, c = 0, d = 0, result = 0, ip = 0, cnt = 0;
+
+	scanf("%d", &ip);
+	result = ip;
+
+	while (d != result)
+	{
+		a = ip / 10;
+		b = ip % 10;
+		c = (a + b) % 10;
+		d = (b * 10) + c;
+
+		ip = d;
+		cnt++;
+	}
+	if (ip == 0)
+		printf("%d", 1);
+	else
+		printf("%d", cnt);                           //1110번  
+
+
+//1차원 배열
+
+    int n;
+    scanf("%d", &n);
+
+    int min = 1000000;
+    int max = -1000000;
+    int input;
+
+    for (int i = 1; i <= n; ++i) {
+	    scanf("%d", &input);
+	    if (input < min) min = input;
+	    if (input > max) max = input;
+    }
+      printf("%d %d\n", min, max);               //10818번      
+
+	
+    int max = 0, input = 0, cnt1 = 0;
+
+    for (int i = 1; i <= 9; ++i) {
+	    scanf("%d", &input);
+
+	    if (input > max) {
+		    max = input;
+		    cnt1 = i;
+	    }
+    }
+    printf("%d\n%d", max, cnt1);             //2562번  
+
+
+	int a = 0, b = 0, c = 0, sum = 0, num = 0;
+	int arr[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+	scanf("%d\n %d\n %d", &a, &b, &c);
+	sum = a * b * c;
+
+	while (sum > 0) {
+		num = sum % 10;
+		arr[num]++;
+		sum /= 10;
+	}
+
+	for (int i = 0; i <= 9; i++) {
+		printf("%d\n", arr[i]);
+	}                                       //2577번       
+
+
+	int num0 = 0, num1 = 0;
+	int rm[10];
+
+	for (int i = 0; i < 10; i++) {
+		scanf("%d", &num0);
+		rm[i] = (num0 % 42);
+	}
+
+	for (int i = 0; i < 10; i++) {
+		int cnt = 0;
+		for (int j = i + 1; j < 10; j++) {
+			if (rm[i] == rm[j]) cnt++;
+		}
+		if (cnt == 0) num1++;
+	}
+	
+	printf("%d", num1);                        //3052번  
+
+
+    int n, score, ms = 0;
+    double sum = 0;
+
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+	    scanf("%d", &score);
+	    sum += score;
+	    if (ms < score) {
+		   ms = score;
+	    }
+    }
+    printf("%lf", (sum / ms * 100) / n);           //1546번  
+    
+    
+    int input, score, sum;
+    char test[80];
+
+    scanf("%d", &input);
+
+    for (int i = 0; i < input; i++) {
+	    sum = 0;
+	    score = 1;
+	    scanf("%s", test);
+	    for (int j = 0; j < strlen(test); j++) {
+		        if (test[j] == 'O') {
+			        sum += score;
+			        score++;
+		        }
+				if (test[j] == 'X')  score = 1;
+
+	    }
+	    printf("%d\n", sum);
+    }                                                 //8958번 
+
+    
+	int N;
+	scanf("%d\n", &N);
+
+	for (int i = 0; i < N; i++) {
+		int students;
+		scanf("%d\n", &students);
+		int scores[256];
+
+		int sum = 0;
+		for (int j = 0; j < students; j++) {
+			scanf("%d", &scores[j]);
+			sum = sum + scores[j];
+		}
+		float average = (double)sum / students;
+		//printf("%f\n", average);
+
+		int counter = 0;
+		for (int k = 0; k < students; k++) {
+			if (scores[k] > average) {
+				counter++;
+			}
+		}
+		printf("%.3f%%\n", ((double)counter / students) * 100); // '%'출력을 위해 '%%'
+
+	}                                                           //4344번     
+
+
+//함수
+    
+
+
+//문자열
+
+	char d = 0;
+	scanf("%c", &d);
+	printf("%d", d);        //11654번  
+
+
+    int n, sum = 0;
+    scanf("%d", &n);
+
+    char num[256];
+    scanf("%s", num);
+
+	for (int i = 0; i < n; i++) {
+		sum += num[i] - '0';      //문자열끼리 사칙연산가능
+	}
+    printf("%d", sum);            // 11720번
+
+
+	char word[256] = { 0 };
+	scanf("%s", word);
+	for (int i = 97; i <= 122; i++) {
+		int j = 0;
+		while (word[j] != 0) {
+			if (word[j] == (char)i) break;
+			j++;
+		}
+		if (word[j] == (char)i) printf("%d ", j);
+		else printf("-1 ");                          
+	}                                                //10809번
+
+
+	int T, R;
+	char S[20];
+
+	scanf("%d", &T);
+
+	for (int i = 0; i < T; i++) {
+
+		scanf("%d %s", &R, S);
+
+		for (int j = 0; j < strlen(S); j++)
+			for (int k = 0; k < R; k++) {
+				printf("%c", S[j]);
+			}
+		printf("\n");
+	}                                                          //2675번   */
+    
+#define MAX 1000001
+
+    char str[MAX];
+    int i;
+    int num[26] = { 0, };
+    int max;
+    int max_index = 0;
+
+    scanf("%s", str);
+    for (i = 0; str[i] != '\0'; i++) {
+		if (str[i] < 97) {
+			str[i] += 32;
+			num[str[i] - 97]++;
+		}
+    }
+    max = num[0];
+	for (i = 1; i < 26; i++) {
+		if (max < num[i]) {
+			max = num[i];
+			max_index = i;
+		}
+		else if (max == num[i] && num[i] != 0) {
+			max_index = -1;
+		}
+	}
+	if (max_index != -1) {
+		printf("%c", 65 + max_index);
+	}
+	else {
+		printf("?\n");
+	}                                                   //1157번
+    
+
+
+    
+	return 0;
+}
